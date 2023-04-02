@@ -5,12 +5,12 @@ import java.util.stream.Stream;
 
 public class ShortestPathCalculation {
 
-    public void calculateShortestPath(Node source, Node destination) {
+    public static void calculateShortestPath(NodeClass source, NodeClass destination) {
         source.setDistance(0);
-        Set<Node> settledNode = new HashSet<>();
-        Queue<Node> unsettledNode = new PriorityQueue<>(Collections.singleton(source));
+        Set<NodeClass> settledNode = new HashSet<>();
+        Queue<NodeClass> unsettledNode = new PriorityQueue<>(Collections.singleton(source));
         while(!unsettledNode.isEmpty()) {
-            Node currentNode = unsettledNode.poll();
+            NodeClass currentNode = unsettledNode.poll();
             currentNode.getAdjacentNodes()
                     .entrySet().stream()
                     .filter(entry -> !settledNode.contains(entry.getKey()))
@@ -25,7 +25,7 @@ public class ShortestPathCalculation {
         }
     }
 
-    private void evaluateDistanceAndPath(Node adjacentNode, Integer edgeWeight, Node sourceNode) {
+    private static void evaluateDistanceAndPath(NodeClass adjacentNode, Integer edgeWeight, NodeClass sourceNode) {
         Integer newDistance = sourceNode.getDistance() + edgeWeight;
         if(newDistance < adjacentNode.getDistance()) {
             adjacentNode.setDistance(newDistance);

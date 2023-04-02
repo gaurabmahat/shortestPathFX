@@ -1,29 +1,22 @@
 package mahat.gaurab.shortestpath.View;
 
-import javafx.scene.Group;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import mahat.gaurab.shortestpath.Controller;
 
 public class Cirlces {
 
-    public static StackPane makingCircles(String name) {
-        Group root = new Group();
+    public static Circle makingCircles(String name) {
         Circle circle = new Circle();
         circle.setId("node_" + name);
-/*        circle.setCenterX(100);
-        circle.setCenterY(100);*/
         circle.setRadius(50);
         circle.setFill(Color.RED);
 
-        Label label = new Label(String.format("%s", name));
+        circle.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+            Controller.addNode(name);
+        });
 
-        root.getChildren().addAll(circle);
-
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().addAll(root, label);
-
-        return stackPane;
+        return circle;
     }
 }

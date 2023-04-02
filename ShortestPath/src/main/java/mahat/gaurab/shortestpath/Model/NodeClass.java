@@ -9,18 +9,18 @@ import java.util.*;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Node implements Comparable<Node>{
+public class NodeClass implements Comparable<NodeClass>{
     private final String name;
     private Integer distance = Integer.MAX_VALUE;
-    private List<Node> shortestPath = new LinkedList<>();
-    private Map<Node, Integer> adjacentNodes = new HashMap<>();
+    private List<NodeClass> shortestPath = new LinkedList<>();
+    private Map<NodeClass, Integer> adjacentNodes = new HashMap<>();
 
-    public void addAdjacentNodes(Node node, int weight) {
+    public void addAdjacentNodes(NodeClass node, int weight) {
         adjacentNodes.put(node, weight);
     }
 
     @Override
-    public int compareTo(Node node) {
+    public int compareTo(NodeClass node) {
         return Integer.compare(this.distance, node.getDistance());
     }
 }

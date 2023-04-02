@@ -1,43 +1,40 @@
 package mahat.gaurab.shortestpath.Model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainNodes {
 
-    private ArrayList<Node> listOfNodes;
+    private ArrayList<NodeClass> listOfNodes;
 
     public MainNodes() {
         listOfNodes = new ArrayList<>();
         makingNodes();
     }
 
-    public ArrayList<Node> getListOfNodes(){
+    public ArrayList<NodeClass> getListOfNodes(){
         return this.listOfNodes;
     }
 
     private void makingNodes() {
-        Node nodeA = new Node("A");
+        NodeClass nodeA = new NodeClass("A");
         listOfNodes.add(nodeA);
-        Node nodeB = new Node("B");
+        NodeClass nodeB = new NodeClass("B");
         listOfNodes.add(nodeB);
-        Node nodeC = new Node("C");
+        NodeClass nodeC = new NodeClass("C");
         listOfNodes.add(nodeC);
-        Node nodeD = new Node("D");
+        NodeClass nodeD = new NodeClass("D");
         listOfNodes.add(nodeD);
-        Node nodeE = new Node("E");
+        NodeClass nodeE = new NodeClass("E");
         listOfNodes.add(nodeE);
-        Node nodeF = new Node("F");
+        NodeClass nodeF = new NodeClass("F");
         listOfNodes.add(nodeF);
-        Node nodeG = new Node("G");
+        NodeClass nodeG = new NodeClass("G");
         listOfNodes.add(nodeG);
-        Node nodeH = new Node("H");
+        NodeClass nodeH = new NodeClass("H");
         listOfNodes.add(nodeH);
-        Node nodeI = new Node("I");
+        NodeClass nodeI = new NodeClass("I");
         listOfNodes.add(nodeI);
-        Node nodeJ = new Node("J");
+        NodeClass nodeJ = new NodeClass("J");
         listOfNodes.add(nodeJ);
 
         nodeA.addAdjacentNodes(nodeB, 5);
@@ -85,15 +82,5 @@ public class MainNodes {
         printPaths(Arrays.asList(nodeJ));*/
     }
 
-    private static void printPaths(List<Node> nodes) {
-        nodes.forEach(node -> {
-            String path = node.getShortestPath().stream()
-                    .map(Node::getName)
-                    .collect(Collectors.joining(" -> "));
-            System.out.println((path.isBlank()
-                    ? "%s : %s".formatted(node.getName(), node.getDistance())
-                    : "%s -> %s : %s".formatted(path, node.getName(), node.getDistance()))
-            );
-        });
-    }
+
 }
