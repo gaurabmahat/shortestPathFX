@@ -15,6 +15,7 @@ public class Cirlces {
 
         circle.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
             Controller.addNode(name);
+            System.out.println(name);
         });
 
         return circle;

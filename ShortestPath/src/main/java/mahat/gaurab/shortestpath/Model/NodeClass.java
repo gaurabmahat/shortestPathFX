@@ -14,6 +14,8 @@ public class NodeClass implements Comparable<NodeClass>{
     private Integer distance = Integer.MAX_VALUE;
     private List<NodeClass> shortestPath = new LinkedList<>();
     private Map<NodeClass, Integer> adjacentNodes = new HashMap<>();
+    private int x_axisForScene;
+    private int y_axisForScene;
 
     public void addAdjacentNodes(NodeClass node, int weight) {
         adjacentNodes.put(node, weight);

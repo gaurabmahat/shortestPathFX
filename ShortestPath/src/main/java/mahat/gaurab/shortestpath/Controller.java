@@ -1,10 +1,9 @@
 package mahat.gaurab.shortestpath;
 
 import javafx.scene.input.MouseEvent;
-import mahat.gaurab.shortestpath.Model.MainNodes;
 import mahat.gaurab.shortestpath.Model.NodeClass;
 import mahat.gaurab.shortestpath.Model.ShortestPathCalculation;
-import mahat.gaurab.shortestpath.View.HelloApplication;
+import mahat.gaurab.shortestpath.View.MainView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,10 +14,10 @@ public class Controller {
     private static ArrayList<String> startingAndEndingNode = new ArrayList<>();
 
     public static void EventHandler() {
-        HelloApplication.getGridPane().setOnMouseClicked((MouseEvent event) -> {
+        MainView.getGridPane().setOnMouseClicked((MouseEvent event) -> {
             if(startingAndEndingNode.size() == 2) {
-                var startingNode = HelloApplication.getNode(startingAndEndingNode.get(0));
-                var endNode = HelloApplication.getNode(startingAndEndingNode.get(1));
+                var startingNode = MainView.getNode(startingAndEndingNode.get(0));
+                var endNode = MainView.getNode(startingAndEndingNode.get(1));
 
                 if(startingNode != null && endNode != null) {
                     ShortestPathCalculation.calculateShortestPath(startingNode, endNode);
