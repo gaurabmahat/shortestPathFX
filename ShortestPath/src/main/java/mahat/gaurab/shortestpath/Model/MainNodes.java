@@ -1,22 +1,44 @@
 package mahat.gaurab.shortestpath.Model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class MainNodes {
 
-    public static void main(String[] args) {
+    private ArrayList<Node> listOfNodes;
+
+    public MainNodes() {
+        listOfNodes = new ArrayList<>();
+        makingNodes();
+    }
+
+    public ArrayList<Node> getListOfNodes(){
+        return this.listOfNodes;
+    }
+
+    private void makingNodes() {
         Node nodeA = new Node("A");
+        listOfNodes.add(nodeA);
         Node nodeB = new Node("B");
+        listOfNodes.add(nodeB);
         Node nodeC = new Node("C");
+        listOfNodes.add(nodeC);
         Node nodeD = new Node("D");
+        listOfNodes.add(nodeD);
         Node nodeE = new Node("E");
+        listOfNodes.add(nodeE);
         Node nodeF = new Node("F");
+        listOfNodes.add(nodeF);
         Node nodeG = new Node("G");
+        listOfNodes.add(nodeG);
         Node nodeH = new Node("H");
+        listOfNodes.add(nodeH);
         Node nodeI = new Node("I");
+        listOfNodes.add(nodeI);
         Node nodeJ = new Node("J");
+        listOfNodes.add(nodeJ);
 
         nodeA.addAdjacentNodes(nodeB, 5);
         nodeA.addAdjacentNodes(nodeD, 2);
@@ -58,9 +80,9 @@ public class MainNodes {
         nodeJ.addAdjacentNodes(nodeH, 3);
         nodeJ.addAdjacentNodes(nodeI, 10);
 
-        var spc = new ShortestPathCalculation();
+        /*var spc = new ShortestPathCalculation();
         spc.calculateShortestPath(nodeB, nodeJ);
-        printPaths(Arrays.asList(nodeJ));
+        printPaths(Arrays.asList(nodeJ));*/
     }
 
     private static void printPaths(List<Node> nodes) {

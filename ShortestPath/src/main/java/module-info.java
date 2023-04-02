@@ -8,4 +8,6 @@ module mahat.gaurab.shortestpath {
     exports mahat.gaurab.shortestpath;
     exports mahat.gaurab.shortestpath.Model;
     opens mahat.gaurab.shortestpath.Model to javafx.fxml;
+    exports mahat.gaurab.shortestpath.View;
+    opens mahat.gaurab.shortestpath.View to javafx.fxml;
 }
