@@ -14,7 +14,7 @@ public class Controller {
     private static ArrayList<String> startingAndEndingNode = new ArrayList<>();
 
     public static void EventHandler() {
-        MainView.getGridPane().setOnMouseClicked((MouseEvent event) -> {
+        MainView.getPane().setOnMouseClicked((MouseEvent event) -> {
             if(startingAndEndingNode.size() == 2) {
                 var startingNode = MainView.getNode(startingAndEndingNode.get(0));
                 var endNode = MainView.getNode(startingAndEndingNode.get(1));

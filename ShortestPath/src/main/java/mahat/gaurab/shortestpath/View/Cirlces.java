@@ -11,7 +11,7 @@ public class Cirlces {
         Circle circle = new Circle();
         circle.setId("node_" + name);
         circle.setRadius(50);
-        circle.setFill(Color.RED);
+        circle.setFill(Color.BLACK);
 
         circle.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
             Controller.addNode(name);

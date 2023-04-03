@@ -17,12 +17,12 @@ public class MainNodes {
 
     private void makingNodes() {
         NodeClass nodeA = new NodeClass("A");
-        nodeA.setX_axisForScene(500);
+        nodeA.setX_axisForScene(570);
         nodeA.setY_axisForScene(50);
         listOfNodes.add(nodeA);
 
         NodeClass nodeB = new NodeClass("B");
-        nodeB.setX_axisForScene(800);
+        nodeB.setX_axisForScene(980);
         nodeB.setY_axisForScene(170);
         listOfNodes.add(nodeB);
 
@@ -52,8 +52,8 @@ public class MainNodes {
         listOfNodes.add(nodeG);
 
         NodeClass nodeH = new NodeClass("H");
-        nodeH.setX_axisForScene(900);
-        nodeH.setY_axisForScene(590);
+        nodeH.setX_axisForScene(990);
+        nodeH.setY_axisForScene(760);
         listOfNodes.add(nodeH);
 
         NodeClass nodeI = new NodeClass("I");
