@@ -8,12 +8,20 @@ import java.util.List;
 
 public class DisplayPath {
 
-    public static void changeColor(NodeClass endNode, List<NodeClass> paths) {
-        paths.forEach(node -> {
-            var circle = (Circle) MainView.getPane().lookup("#node_" + node.getName());
-            circle.setFill(Color.RED);
-        });
-        var circle = (Circle) MainView.getPane().lookup("#node_" + endNode.getName());
+    public static void startingNodeColor(String startingNode) {
+        var circle = (Circle) MainView.getPane().lookup("#node_" + startingNode);
         circle.setFill(Color.RED);
+    }
+
+    public static void endingNodeColor(String endingNode) {
+        var circle = (Circle) MainView.getPane().lookup("#node_" + endingNode);
+        circle.setFill(Color.GREEN);
+    }
+
+    public static void pathsColor(NodeClass endNode, List<NodeClass> paths) {
+        for(int i = 1; i < paths.size(); i++) {
+            var circle = (Circle) MainView.getPane().lookup("#node_" + paths.get(i).getName());
+            circle.setFill(Color.YELLOW);
+        }
     }
 }

@@ -16,14 +16,22 @@ public class Controller {
 
     public static void EventHandler() {
         MainView.getPane().setOnMouseClicked((MouseEvent event) -> {
+            if(startingAndEndingNode.size() == 1) {
+                DisplayPath.startingNodeColor(startingAndEndingNode.get(0));
+            }
+
             if(startingAndEndingNode.size() == 2) {
+                DisplayPath.endingNodeColor(startingAndEndingNode.get(1));
+
                 var startingNode = MainView.getNode(startingAndEndingNode.get(0));
                 var endNode = MainView.getNode(startingAndEndingNode.get(1));
 
                 if(startingNode != null && endNode != null) {
                     ShortestPathCalculation.calculateShortestPath(startingNode, endNode);
+
                     printPaths(Arrays.asList(endNode));
-                    DisplayPath.changeColor(endNode, endNode.getShortestPath());
+
+                    DisplayPath.pathsColor(endNode, endNode.getShortestPath());
                 }
 
                 startingAndEndingNode.clear();
