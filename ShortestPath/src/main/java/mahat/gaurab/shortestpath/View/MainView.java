@@ -48,7 +48,7 @@ public class MainView extends Application {
     }
 
     private void makingLines(ArrayList<NodeClass> nodeList) {
-        //Make lines
+        //Make lines and text for path weights
         for(var node : nodeList) {
             node.getAdjacentNodes().forEach((key, value) -> {
                 var lineNode1 = pane.lookup("#line_" + node.getName() + "_" + key.getName());
@@ -61,8 +61,8 @@ public class MainView extends Application {
                     Text text = new Text(Integer.toString(value));
                     text.setFont(Font.font("Verdana", FontWeight.NORMAL, FontPosture.REGULAR, 15));
 
-                    int textx_axis = (node.getX_axisForScene()+ key.getX_axisForScene()) / 2;
-                    int texty_axis = ((node.getY_axisForScene()+key.getY_axisForScene()) /2) + 17;
+                    int textx_axis = (node.getX_axisForScene()+ key.getX_axisForScene()) / 2 + 20;
+                    int texty_axis = ((node.getY_axisForScene()+key.getY_axisForScene()) /2) + 10;
                     text.relocate(textx_axis, texty_axis);
 
                     pane.getChildren().addAll(line,text);

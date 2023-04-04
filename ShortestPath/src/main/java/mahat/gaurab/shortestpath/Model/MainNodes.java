@@ -22,8 +22,8 @@ public class MainNodes {
         listOfNodes.add(nodeA);
 
         NodeClass nodeB = new NodeClass("B");
-        nodeB.setX_axisForScene(980);
-        nodeB.setY_axisForScene(170);
+        nodeB.setX_axisForScene(1100);
+        nodeB.setY_axisForScene(50);
         listOfNodes.add(nodeB);
 
         NodeClass nodeC = new NodeClass("C");
@@ -33,7 +33,7 @@ public class MainNodes {
 
         NodeClass nodeD = new NodeClass("D");
         nodeD.setX_axisForScene(200);
-        nodeD.setY_axisForScene(190);
+        nodeD.setY_axisForScene(50);
         listOfNodes.add(nodeD);
 
         NodeClass nodeE = new NodeClass("E");
@@ -47,17 +47,17 @@ public class MainNodes {
         listOfNodes.add(nodeF);
 
         NodeClass nodeG = new NodeClass("G");
-        nodeG.setX_axisForScene(510);
-        nodeG.setY_axisForScene(690);
+        nodeG.setX_axisForScene(700);
+        nodeG.setY_axisForScene(620);
         listOfNodes.add(nodeG);
 
         NodeClass nodeH = new NodeClass("H");
-        nodeH.setX_axisForScene(990);
-        nodeH.setY_axisForScene(760);
+        nodeH.setX_axisForScene(1100);
+        nodeH.setY_axisForScene(900);
         listOfNodes.add(nodeH);
 
         NodeClass nodeI = new NodeClass("I");
-        nodeI.setX_axisForScene(290);
+        nodeI.setX_axisForScene(190);
         nodeI.setY_axisForScene(900);
         listOfNodes.add(nodeI);
 
