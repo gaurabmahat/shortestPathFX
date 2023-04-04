@@ -1,7 +1,6 @@
 package mahat.gaurab.shortestpath.View;
 
 import javafx.application.Application;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
@@ -18,7 +17,6 @@ import mahat.gaurab.shortestpath.Model.NodeClass;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainView extends Application {
 
@@ -35,7 +33,8 @@ public class MainView extends Application {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(pane);
         scene = new Scene(scrollPane, 820, 640);
-        adjacentNodes(buildingNodes.getListOfNodes());
+        makingLines(buildingNodes.getListOfNodes());
+        makingCircles(buildingNodes.getListOfNodes());
 
         Controller.EventHandler();
 
@@ -48,8 +47,8 @@ public class MainView extends Application {
         return pane;
     }
 
-    private void adjacentNodes(ArrayList<NodeClass> nodeList) {
-        //First make lines
+    private void makingLines(ArrayList<NodeClass> nodeList) {
+        //Make lines
         for(var node : nodeList) {
             node.getAdjacentNodes().forEach((key, value) -> {
                 var lineNode1 = pane.lookup("#line_" + node.getName() + "_" + key.getName());
@@ -70,15 +69,15 @@ public class MainView extends Application {
                 }
             });
         }
+    }
 
+    private void makingCircles(ArrayList<NodeClass> nodeList) {
         //Then make circles
         for(var node : nodeList) {
             Circle circle = Cirlces.makingCircles(node.getName());
             circle.relocate(node.getX_axisForScene(), node.getY_axisForScene());
             pane.getChildren().add(circle);
         }
-
-
     }
 
     public static NodeClass getNode(String name) {

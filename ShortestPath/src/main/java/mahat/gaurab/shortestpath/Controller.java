@@ -1,6 +1,7 @@
 package mahat.gaurab.shortestpath;
 
 import javafx.scene.input.MouseEvent;
+import mahat.gaurab.shortestpath.Model.DisplayPath;
 import mahat.gaurab.shortestpath.Model.NodeClass;
 import mahat.gaurab.shortestpath.Model.ShortestPathCalculation;
 import mahat.gaurab.shortestpath.View.MainView;
@@ -22,6 +23,7 @@ public class Controller {
                 if(startingNode != null && endNode != null) {
                     ShortestPathCalculation.calculateShortestPath(startingNode, endNode);
                     printPaths(Arrays.asList(endNode));
+                    DisplayPath.changeColor(endNode, endNode.getShortestPath());
                 }
 
                 startingAndEndingNode.clear();
