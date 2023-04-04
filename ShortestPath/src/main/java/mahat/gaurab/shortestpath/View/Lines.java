@@ -1,5 +1,6 @@
 package mahat.gaurab.shortestpath.View;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class Lines {
@@ -10,7 +11,8 @@ public class Lines {
         Line line = new Line(startX, startY,
                 endX, endY);
         line.setId("line_"+starting+"_"+ending);
-        line.setStrokeWidth(5);
+        line.setStroke(Color.BLACK);
+        line.setStrokeWidth(7.5);
         return line;
     }
 }

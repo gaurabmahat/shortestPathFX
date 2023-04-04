@@ -31,7 +31,7 @@ public class Controller {
 
                     printPaths(Arrays.asList(endNode));
 
-                    DisplayPath.pathsColor(endNode, endNode.getShortestPath());
+                    DisplayPath.pathsColor(endNode.getName(), endNode.getShortestPath());
                 }
 
                 startingAndEndingNode.clear();

@@ -89,6 +89,12 @@ public class MainView extends Application {
         return null;
     }
 
+    public static void clearLinkedList() {
+        buildingNodes.getListOfNodes().forEach(node -> {
+            node.getShortestPath().clear();
+        });
+    }
+
     public static void main(String[] args) {
         launch();
     }
