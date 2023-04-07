@@ -90,9 +90,10 @@ public class MainView extends Application {
     }
 
     public static void clearLinkedList() {
-        buildingNodes.getListOfNodes().forEach(node -> {
+        /*for(int i = 0; i < buildingNodes.getListOfNodes().size(); i++) {
+            var node = buildingNodes.getListOfNodes().get(i);
             node.getShortestPath().clear();
-        });
+        }*/
     }
 
     public static void main(String[] args) {

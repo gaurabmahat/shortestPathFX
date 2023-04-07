@@ -59,11 +59,12 @@ public class DisplayPath {
                     endNode + "_" + startingNode);
         }
 
-        StrokeTransition strokeTransition = new StrokeTransition(Duration.seconds(paths.size()+4), line);
+        StrokeTransition strokeTransition = new StrokeTransition(Duration.seconds(paths.size()+2), line);
         strokeTransition.setToValue(Color.YELLOW);
         strokeTransition.play();
 
         //After the nodes and paths has been colored, clear the linked list
+        MainView.clearLinkedList();
 
     }
 }
